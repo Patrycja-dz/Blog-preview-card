@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Patrycja-dz/Blog-preview-card)
+- Live Site URL: [Add live site URL here](https://patrycja-dz.github.io/Blog-preview-card/)
 
 ## My process
 
@@ -44,26 +44,38 @@ Users should be able to:
 
 ### What I learned
 
-Through this project, I enhanced my understanding of HTML and CSS, particularly in using custom properties and managing hover states effectively. Below are some examples of code that I am proud of:
-
-```html
-<h2 class="title">HTML & CSS foundations</h2>
-```
+Through this project, I enhanced my understanding of HTML and CSS. One of the key things I focused on in this project was creating smooth and engaging animations. I am particularly proud of the liquid animation effect combined with a smoother box shadow transition on the card component. This adds a dynamic feel to the card, enhancing the user experience. Below are some examples of code that I am proud of:
 
 ```css
-.title:hover {
-  cursor: pointer;
-  color: var(--primary-yellow);
-  background-image: linear-gradient(
-    to right,
-    #23abd4,
-    var(--neutral-grey) 50%,
-    var(--neutral-white) 50%
-  );
-  background-size: 200% 100%;
-  background-position: -100%;
-  transition: all 0.8s ease-in-out;
-  text-shadow: 0 0 0 var(--primary-yellow);
+main {
+  max-width: 384px;
+  height: 528px;
+  background-color: var(--neutral-white);
+  padding: 24px;
+  border: 1px solid var(--neutral-black);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 0 var(--neutral-black);
+  margin: 0 24px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+@keyframes liquid {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: blur(0);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: blur(4px);
+  }
+}
+
+main:hover {
+  box-shadow: 16px 16px 0 0 var(--neutral-black);
+  transform: translateY(-5px);
+  transition: box-shadow 0.5s ease-out, transform 0.5s ease-out;
+  animation: liquid 2s infinite;
 }
 ```
 
