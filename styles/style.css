@@ -4,13 +4,15 @@
   font-weight: 500;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Figtree";
   src: url("../assets/fonts/Figtree-Italic-VariableFont_wght.ttf")
-    format("wght");
+    format("truetype");
   font-weight: 500;
   font-style: italic;
 }
+
 @font-face {
   font-family: "Figtree";
   src: url("../assets/fonts/static/Figtree-SemiBold.ttf") format("truetype");
@@ -24,7 +26,7 @@
   --neutral-grey: hsl(0, 0%, 50%);
   --neutral-black: hsl(0, 0%, 7%);
   --body-fs: 1rem;
-  --body-font: ;
+  --body-font: "Figtree", sans-serif;
 }
 
 *,
@@ -32,29 +34,109 @@
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
+
 img,
 picture {
   display: block;
   width: 100%;
   object-fit: cover;
 }
+
 html {
   color-scheme: dark light;
 }
+
 body {
   min-height: 100svh;
   display: grid;
   place-content: center;
-}
-/* main {
-  margin: 0 auto;
-} */
-p {
-  font-family: "Figtree";
+  background-color: var(--primary-yellow);
+  color: var(--neutral-black);
+  font-family: var(--body-font);
   font-weight: 500;
+}
+
+p {
+  font-family: var(--body-font);
+  font-weight: 500;
+}
+
+main {
+  max-width: 384px;
+  max-height: 528px;
+  background-color: var(--neutral-white);
+  padding: 24px;
+  border: 1px solid var(--neutral-black);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 4px var(--neutral-black);
+  margin: 0 24px;
+}
+
+.category {
+  padding: 4px 12px;
+  background-color: var(--primary-yellow);
+  max-width: 82px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-family: var(--body-font);
+  font-weight: 800;
+}
+
+.published-date {
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--body-font);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-shadow: 0 3px 2px var(--neutral-grey);
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: var(--primary-yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #23abd4,
+    var(--neutral-grey) 50%,
+    var(--neutral-white) 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  transition: all 0.8s ease-in-out;
+  text-shadow: 0 0 0 var(--primary-yellow);
+}
+
+.card-image img {
+  border-radius: 10px;
+  max-height: 200px;
+  margin-bottom: 24px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  font-family: var(--body-font);
+  font-weight: 800;
+}
+
+.author-avatar {
+  width: 32px;
+  margin-right: 12px;
+}
+
+.description {
+  padding-bottom: 24px;
+  color: var(--neutral-grey);
 }
